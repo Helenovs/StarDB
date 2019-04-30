@@ -32,14 +32,18 @@ class App extends Component {
     if (this.state.hasError) {
       return < ErrorIndicator />
     }
-    const {getPerson, getStarShip} = this.swapiService;
+    const { getPerson, getStarShip, getPersonImage, getStarShipImage } = this.swapiService;
     const personDetails = (
       <ItemDetails itemId = {11}
-                   getData = {getPerson} />
+                   getData = {getPerson}
+                   getImageUrl= {getPersonImage}>
+  
+      </ItemDetails>
     );
     const starshipDetails = (
       <ItemDetails itemId = {5}
-                   getData = {getStarShip} />
+                   getData = {getStarShip}
+                   getImageUrl = {  getStarShipImage}/>
     );
     return(
       <ErrorBoundry>
